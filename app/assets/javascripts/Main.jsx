@@ -18,7 +18,7 @@ var Main = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<h1>1 + 1 is definitely {1+1}</h1>
+				<h1>Properties are passed through: {this.props.testProp}</h1>
 			</div>
 		);
 	}
@@ -27,7 +27,7 @@ var Main = React.createClass({
 
 $(document).ready(function(){
 	ReactDOM.render(
-		<Main />,
+		<Main testProp="lolpropz" />,
 		document.getElementById('app')
 	)
 });
