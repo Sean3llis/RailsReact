@@ -47,20 +47,7 @@
   \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	// var Test = require('./test.jsx');
-	
-	// var App = React.createClass({
-	// 	render: function(){
-	// 		return (
-	// 			"app main"
-	// 		)
-	// 	}
-	// });
-	
-	// module.exports = App;
-	console.log('main jsx loaded.');
-	
-	var Test = __webpack_require__(/*! ./test */ 1);
+	var TweetBox = __webpack_require__(/*! ./components/TweetBox */ 1);
 	
 	var App = React.createClass({
 		render: function () {
@@ -72,9 +59,10 @@
 					null,
 					'App Title'
 				),
-				React.createElement(Test, null)
+				React.createElement(TweetBox, null)
 			);
-		}
+		},
+		displayName: 'App'
 	});
 	
 	$(document).ready(function () {
@@ -83,22 +71,23 @@
 
 /***/ },
 /* 1 */
-/*!**************************************!*\
-  !*** ./app/assets/frontend/test.jsx ***!
-  \**************************************/
+/*!*****************************************************!*\
+  !*** ./app/assets/frontend/components/TweetBox.jsx ***!
+  \*****************************************************/
 /***/ function(module, exports) {
 
-	var Test = React.createClass({
+	var TweetBox = React.createClass({
 		render: function () {
 			return React.createElement(
-				"div",
+				'div',
 				null,
-				"\"testing 123\""
+				React.createElement('textarea', null)
 			);
-		}
+		},
+		displayName: 'TweetBox'
 	});
 	
-	module.exports = Test;
+	module.exports = TweetBox;
 
 /***/ }
 /******/ ]);
